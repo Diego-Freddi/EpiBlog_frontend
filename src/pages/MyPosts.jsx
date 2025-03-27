@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Alert, Button } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
+import api from '../utils/api';
 import PostCard from '../components/PostCard';
 
 const MyPosts = () => {
@@ -17,7 +17,7 @@ const MyPosts = () => {
         setError('utente non autenticato');
         return;
       }
-      const response = await axios.get(`http://localhost:5020/api/posts?author=${user._id}`);
+        const response = await api.get(`/posts?author=${user._id}`);
       setPosts(response.data.posts);
     } catch (err) {
       console.error('Errore nel caricamento dei post:', err);
@@ -35,7 +35,7 @@ const MyPosts = () => {
 
   const handleDelete = async (postId) => {
     try {
-      await axios.delete(`http://localhost:5020/api/posts/${postId}`);
+      await api.delete(`/posts/${postId}`);
       fetchMyPosts(); // Ricarica i post dopo l'eliminazione
     } catch (err) {
       setError('Errore durante la eliminazione del post');

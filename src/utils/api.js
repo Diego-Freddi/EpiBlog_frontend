@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://epiblog-backend-8vvs.onrender.com/api'
-});
+    baseURL: process.env.REACT_APP_API_URL + '/api',
+    withCredentials: true
+  });
 
 // Aggiungi il token a tutte le richieste
 api.interceptors.request.use(

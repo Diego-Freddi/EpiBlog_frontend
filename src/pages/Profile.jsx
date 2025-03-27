@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Alert, Image, Modal } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
+import api from '../utils/api';
 import '../styles/Profile.css';
 
 const Profile = () => {
@@ -64,8 +64,8 @@ const Profile = () => {
         formDataToSend.append('profileImage', profileImage);
       }
 
-      const response = await axios.put(
-        `http://localhost:5020/api/users/${user._id}`, 
+      const response = await api.put(
+        `/users/${user._id}`, 
         formDataToSend,
         {
           headers: {
@@ -91,7 +91,7 @@ const Profile = () => {
         return;
       }
 
-      await axios.put(`http://localhost:5020/api/users/${user._id}/password`, {
+      await api.put(`/users/${user._id}/password`, {
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword
       });
