@@ -1,0 +1,503 @@
+.post-details {
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.post-details-header {
+  position: relative;
+  z-index: 3;
+  padding: var(--spacing-xl);
+  background: #2c3e50;
+  margin-bottom: var(--spacing-md);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-details-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-details-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: 0;
+}
+
+.post-details-category {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.post-details-read-time {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.post-details-cover {
+  margin: 0 auto var(--spacing-xl);
+  width: 100%;
+  height: 70vh;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-details-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.post-details-content-wrapper {
+  background: var(--primary-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: -100px auto 0;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
+}
+
+.post-details-content {
+  border-radius: 0;
+  background: var(--post-bg);
+  padding: var(--spacing-lg);
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-details-content .ProseMirror {
+  outline: none;
+}
+
+.post-details-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.post-details-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.post-details-content p {
+  margin: 1.2rem 0;
+  color: var(--text-primary);
+}
+
+.post-details-content ul {
+  list-style-type: disc;
+  margin: 1.2rem 0;
+  padding-left: 2.5rem;
+  color: var(--text-primary);
+}
+
+.post-details-content ol {
+  list-style-type: decimal;
+  margin: 1.2rem 0;
+  padding-left: 2.5rem;
+  color: var(--text-primary);
+}
+
+.post-details-content li {
+  margin: 0.8rem 0;
+  padding-left: 0.5rem;
+  color: var(--text-primary);
+}
+
+.post-details-content li::marker {
+  color: #0066cc;
+}
+
+.post-details-content a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 102, 204, 0.2);
+  transition: all 0.2s ease;
+}
+
+.post-details-content a:hover {
+  border-bottom-color: #0066cc;
+}
+
+.post-details-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.post-details-content em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.post-details-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per i blockquote se li utilizzi */
+.post-details-content blockquote {
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  border-left: 4px solid #0066cc;
+  background: rgba(0, 102, 204, 0.05);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #34495e;
+}
+
+/* Stile per il codice inline se lo utilizzi */
+.post-details-content code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.post-details-author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.post-details-author-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+}
+
+.post-details-author-info {
+  flex: 1;
+}
+
+.post-details-author-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.post-details-actions {
+  position: static;
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-left: auto;
+}
+
+.post-details-button {
+  padding: 8px 18px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.post-details-button.edit {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-details-button.edit:hover {
+  background: #ffffff;
+  transform: scale(1.02);
+}
+
+.post-details-button.edit:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.post-details-button.delete {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+}
+
+.post-details-button.delete:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.post-details-button.delete:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Loading State */
+.post-details-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Error State */
+.post-details-error {
+  background: rgba(255,59,48,0.1);
+  color: #ff3b30;
+  padding: var(--spacing-md);
+  border-radius: 16px;
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(255,59,48,0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .post-details {
+    padding: 0;
+  }
+
+  .post-details-header {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .post-details-title {
+    font-size: 2.5rem;
+  }
+
+  .post-details-cover {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .post-details-content {
+    font-size: 16px;
+    padding: var(--spacing-lg);
+  }
+
+  .post-details-actions {
+    position: static;
+    margin: var(--spacing-md);
+    justify-content: flex-end;
+  }
+
+  .post-details-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .post-details-content h1 {
+    font-size: 28px;
+  }
+
+  .post-details-content h2 {
+    font-size: 24px;
+  }
+}
+
+/* Stile per il bottone dei commenti */
+.comment-button {
+  padding: 8px 18px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.comment-button:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: scale(1.02);
+}
+
+.comment-button:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.post-details-footer {
+  margin-top: 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Dark mode per l'header */
+:root.dark-mode .post-details-header {
+  background: var(--jumbo-bg);
+}
+
+:root.dark-mode .post-details-category {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+:root.dark-mode .post-details-read-time {
+  color: var(--text-secondary);
+}
+
+:root.dark-mode .post-details-button.edit {
+  /* Gli stili verranno ereditati dalle regole globali */
+}
+
+:root.dark-mode .post-details-button.edit:hover {
+  transform: scale(1.02);
+}
+
+:root.dark-mode .post-details-button.delete {
+  /* Gli stili verranno ereditati dalle regole globali */
+}
+
+:root.dark-mode .post-details-button.delete:hover {
+  transform: scale(1.02);
+}
+
+:root.dark-mode .comment-button {
+  /* Gli stili verranno ereditati dalle regole globali */
+}
+
+:root.dark-mode .comment-button:hover {
+  transform: scale(1.02);
+}
+
+/* Comments styles */
+.comments-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.comment-input {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+  transition: all 0.2s ease-out;
+}
+
+.comment-input:focus {
+  background: var(--primary-bg);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(59, 156, 255, 0.15);
+  outline: none;
+}
+
+.comments-list {
+  border: none;
+}
+
+.comment-item {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.comment-content {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment-author-image {
+  margin-right: 0.75rem;
+}
+
+.comment-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-author-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.comment-date {
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+}
+
+.comment-text {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Dark mode specific styles */
+:root.dark-mode .comment-item {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+:root.dark-mode .comment-input {
+  background: var(--secondary-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+:root.dark-mode .comment-input:focus {
+  background: var(--primary-bg);
+  border-color: var(--accent-color);
+} 

@@ -1,0 +1,316 @@
+.edit-post-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.edit-post-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  padding: 24px 24px 0;
+}
+
+.edit-post-form {
+  padding: 0 24px 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text-primary);
+  font-size: 15px;
+  transition: all 0.2s ease-out;
+}
+
+.form-control:focus {
+  background: var(--primary-bg);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(59, 156, 255, 0.15);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--text-tertiary);
+}
+
+.image-preview {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 300px;
+  border: 1px solid var(--border-color);
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.file-input-wrapper {
+  margin-bottom: 12px;
+}
+
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+.file-input-button {
+  padding: 8px 18px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.file-input-button:hover {
+  background: var(--primary-bg);
+  transform: scale(1.02);
+}
+
+.file-input-button:active {
+  transform: scale(0.98);
+  background: var(--secondary-bg);
+}
+
+.file-input-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.edit-post-button {
+  padding: 8px 18px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: rgba(0, 0, 0, 0.03);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.edit-post-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.02);
+}
+
+.edit-post-button:active {
+  transform: scale(0.98);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.textarea-content {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.read-time-group {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.form-select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  color: #000;
+  font-size: 15px;
+  height: auto;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.form-select:focus {
+  background-color: #fff;
+  border-color: rgb(0, 122, 255);
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.15);
+  outline: none;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 15px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .edit-post-container {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .edit-post-title {
+    padding: 20px 20px 0;
+  }
+
+  .edit-post-form {
+    padding: 0 20px 20px;
+  }
+
+  .read-time-group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.editor-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--secondary-bg);
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+}
+
+.editor-wrapper:focus-within {
+  background: var(--primary-bg);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(59, 156, 255, 0.15);
+}
+
+.menu-bar {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background-color: var(--primary-bg);
+}
+
+.menu-bar button {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--secondary-bg);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease-out;
+}
+
+.menu-bar button:hover {
+  background-color: var(--primary-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-bar button.is-active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.menu-bar button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.editor-content {
+  padding: 1rem;
+  min-height: 300px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.editor-content .ProseMirror {
+  outline: none;
+  min-height: 300px;
+}
+
+.editor-content p {
+  margin: 0.8rem 0;
+}
+
+.editor-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: #1a1a1a;
+}
+
+.editor-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 1.2rem 0 0.8rem;
+  color: #1a1a1a;
+}
+
+.editor-content ul,
+.editor-content ol {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+}
+
+.editor-content li {
+  margin: 0.4rem 0;
+}
+
+.editor-content ul {
+  list-style-type: disc;
+}
+
+.editor-content ol {
+  list-style-type: decimal;
+}
+
+.editor-content a {
+  color: rgb(0, 122, 255);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 122, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.editor-content a:hover {
+  border-bottom-color: rgb(0, 122, 255);
+} 
