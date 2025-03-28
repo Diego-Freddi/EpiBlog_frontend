@@ -28,7 +28,7 @@ const LikeButton = ({ postId }) => {
     const handleLike = async () => {
         if (!user) {
             // Se l'utente non è loggato, reindirizza al login
-            window.location.href = '/login';
+            navigate('/login');
             return;
         }
 
