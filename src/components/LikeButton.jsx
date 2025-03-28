@@ -27,7 +27,7 @@ const LikeButton = ({ postId }) => {
 
     const handleLike = async () => {
         if (!user) {
-            // Se l'utente non è loggato, reindirizza al login
+            console.log('Utente non autenticato, reindirizzamento al login');
             navigate('/login');
             return;
         }
@@ -44,8 +44,7 @@ const LikeButton = ({ postId }) => {
     return (
         <button 
             onClick={handleLike}
-            className={`like-button ${isLiked ? 'liked' : ''}`}
-            disabled={!user}
+            className={`like-button ${isLiked ? 'liked' : ''} ${!user ? 'not-authenticated' : ''}`}
         >
             <svg 
                 xmlns="http://www.w3.org/2000/svg" 
