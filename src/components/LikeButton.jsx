@@ -8,7 +8,7 @@ const LikeButton = ({ postId }) => {
     const { user } = useAuth();
 
     useEffect(() => {
-        if (user && postId) {
+        if (postId) {
             // Carica lo stato iniziale del like
             const fetchLikeStatus = async () => {
                 try {
@@ -21,11 +21,12 @@ const LikeButton = ({ postId }) => {
             };
             fetchLikeStatus();
         }
-    }, [postId, user]);
+    }, [postId]);
 
     const handleLike = async () => {
         if (!user) {
-            // Se l'utente non è loggato, non fare nulla
+            // Se l'utente non è loggato, reindirizza al login
+            window.location.href = '/login';
             return;
         }
 
