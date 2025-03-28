@@ -21,7 +21,7 @@ const LikeButton = ({ postId }) => {
             };
             fetchLikeStatus();
         }
-    }, [postId]);
+    }, [postId, user]);
 
     const handleLike = async () => {
         if (!user) {
